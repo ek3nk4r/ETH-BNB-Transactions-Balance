@@ -11,12 +11,12 @@ import multiprocessing
 from multiprocessing import Pool
 
 r = 0
-cores=2 #CPU Control Set Cores set ammount to API KEYS USED
+cores=1 #CPU Control Set Cores set ammount to API KEYS USED
 
 def seek(r):
     while True:
-        api1="?apiKey=freekey" # Get FREE API KEY from https://ethplorer.io/
-        api2="?apiKey=freekey" # Get FREE API KEY from https://ethplorer.io/
+        api1="?apiKey=ZB2KER44793ZQ369TY1DD186HQPGCDF78F" # Get FREE API KEY from https://ethplorer.io/
+        #api2="?apiKey=freekey" # Get FREE API KEY from https://ethplorer.io/
         #api3="?apiKey=freekey" # Get FREE API KEY from https://ethplorer.io/
         #api4="?apiKey=freekey" # Get FREE API KEY from https://ethplorer.io/
         #api5="?apiKey=freekey" # Get FREE API KEY from https://ethplorer.io/
@@ -25,8 +25,8 @@ def seek(r):
         #mylist = [str(api1), str(api2), str(api3), str(api4)] # 4 API KEYS
         #mylist = [str(api1), str(api2), str(api3), str(api4), str(api5), str(api6)] # 6 API KEYS
         apikeys=random.choice(mylist)
-        apibnb1= "&apikey=freekey" ## Get FREE API KEY from https://bscscan.com/
-        apibnb2= "&apikey=freekey" ## Get FREE API KEY from https://bscscan.com/
+        apibnb1= "&apikey=DNI3I62555NBQVE9NWXANEFQM5AFBGKXM3" ## Get FREE API KEY from https://bscscan.com/
+        #apibnb2= "&apikey=freekey" ## Get FREE API KEY from https://bscscan.com/
         #apibnb3= "&apikey=freekey" ## Get FREE API KEY from https://bscscan.com/
         #apibnb4= "&apikey=freekey" ## Get FREE API KEY from https://bscscan.com/
         #apibnb5= "&apikey=freekey" ## Get FREE API KEY from https://bscscan.com
@@ -111,7 +111,7 @@ def seek(r):
         ethadd = '0x' + kec
         bnbadd = '0x' + kec
         privatekey = priv.to_string().hex()
-        blocs=requests.get("https://api.ethplorer.io/getAddressInfo/" + ethadd +apikeys)
+        blocs=requests.get("https://api.etherscan.io/api?module=account&action=balance&address=" + ethadd +apikeys)
         ress = blocs.json()
         TXS = dict(ress)["countTxs"]
         blocs1 = requests.get("https://api.bscscan.com/api?module=account&action=balance&address=" + bnbadd + apikeysbnb)
